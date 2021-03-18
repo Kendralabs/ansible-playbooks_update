@@ -21,13 +21,13 @@
   when: ansible_os_family == 'Debian'
 
 - block:
-  - include: ufw.yml
+  - import_playbook: ufw.yml
   when: ansible_distribution == 'Ubuntu'
 
 - block:
-  - include: iptables.yml
-  - include: selinux.yml
-  - include: epel.yml
+  - import_playbook: iptables.yml
+  - import_playbook: selinux.yml
+  - import_playbook: epel.yml
   when: ansible_os_family == 'RedHat'
 
 - package: name={{ item }} state=present
