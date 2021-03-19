@@ -15,19 +15,18 @@
 
 ---
 
-- block:
-  - apt: name=linux-image-extra-{{ ansible_kernel }} state=present
+- apt: name=linux-image-extra-{{ ansible_kernel }} state=present
     become: yes
   when: ansible_os_family == 'Debian'
 
-- block:
-  - import_playbook: ufw.yml
+
+- import_playbook: ufw.yml
   when: ansible_distribution == 'Ubuntu'
 
-- block:
-  - import_playbook: iptables.yml
-  - import_playbook: selinux.yml
-  - import_playbook: epel.yml
+
+- import_playbook: iptables.yml
+- import_playbook: selinux.yml
+- import_playbook: epel.yml
   when: ansible_os_family == 'RedHat'
 
 - package: name={{ item }} state=present
