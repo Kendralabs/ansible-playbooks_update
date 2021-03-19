@@ -71,22 +71,22 @@
           region: "{{ region | mandatory }}"
           filters:
             association.subnet-id: "{{ docker_subnet_id | mandatory }}"
-        register: ec2_vpc_route_table_facts_result
+        register: ec2_vpc_route_table_info_result
       - set_fact:
-          private_route_table: "{{ ec2_vpc_route_table_facts_result.route_tables | first }}"
+          private_route_table: "{{ ec2_vpc_route_table_info_result.route_tables | first }}"
       when: provider == 'aws' 
     - block:
       - name: Set OpenStack cedentials
         set_fact:
           openstack: "{{ lookup('file', '/etc/openstack/clouds.yaml') | from_yaml }}"
-      - os_subnets_facts:
+      - os_subnets_info:
           cloud: TAP
           filters:
             network_id: "{{ bosh_subnet_id | mandatory }}"
       - set_fact:
           bosh_cidr: "{{ openstack_subnets[0].cidr }}"
           bosh_availability_zone: "{{ availability_zone }}"
-      - os_subnets_facts:
+      - os_subnets_info:
           cloud: TAP
           region_name: "{{ region | mandatory }}"
           filters:
@@ -94,7 +94,7 @@
       - set_fact:
           cf_private_cidr: "{{ openstack_subnets[0].cidr }}"
           cf_private_az: "{{ availability_zone }}"
-      - os_subnets_facts:
+      - os_subnets_info:
           cloud: TAP
           region_name: "{{ region | mandatory }}"
           filters:
@@ -102,7 +102,7 @@
       - set_fact:
           cf_public_cidr: "{{ openstack_subnets[0].cidr }}"
           cf_public_az: "{{ availability_zone }}"
-      - os_subnets_facts:
+      - os_subnets_info:
           cloud: TAP
           region_name: "{{ region | mandatory }}"
           filters:
