@@ -20,14 +20,14 @@
     become: yes
   when: ansible_os_family == 'Debian'
 
-- name: ufw ubuntu
-  import_playbook: ufw.yml
+- block:
+  - include: ufw.yml
   when: ansible_distribution == 'Ubuntu'
 
-- name: redhat
-  import_playbook: iptables.yml
-  import_playbook: selinux.yml
-  import_playbook: epel.yml
+- block:
+  - include: iptables.yml
+  - include: selinux.yml
+  - include: epel.yml
   when: ansible_os_family == 'RedHat'
 
 - package: name={{ item }} state=present
