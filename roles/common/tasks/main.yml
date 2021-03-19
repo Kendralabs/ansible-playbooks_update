@@ -15,10 +15,10 @@
 
 ---
 
-- apt: name=linux-image-extra-{{ ansible_kernel }} state=present
+- block:
+  - apt: name=linux-image-extra-{{ ansible_kernel }} state=present
     become: yes
   when: ansible_os_family == 'Debian'
-
 
 - import_playbook: ufw.yml
   when: ansible_distribution == 'Ubuntu'
