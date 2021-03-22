@@ -15,7 +15,7 @@
 
 ---
 
-- hosts: all
+- hosts: localhost
   tasks:
     - block:
       - ec2_instance_info:
