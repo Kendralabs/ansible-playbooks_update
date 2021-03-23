@@ -17,9 +17,8 @@
 
 - hosts: localhost
   tasks:
-    - block:
-      - ec2_instance_info:
-      - set_fact:
+    - ec2_instance_info:
+    - set_fact:
           stack: "{{ lookup('ini', 'stack section=main file=/etc/cfn/cfn-hup.conf') }}"
           region: "{{ lookup('ini', 'region section=main file=/etc/cfn/cfn-hup.conf') }}"
       when: provider == 'aws'
