@@ -18,6 +18,7 @@
 - hosts: localhost
   tasks:
     - ec2_instance_info:
+          region: eu-central-1
     - set_fact:
           stack: "{{ lookup('ini', 'stack section=main file=/etc/cfn/cfn-hup.conf') }}"
           region: "{{ lookup('ini', 'region section=main file=/etc/cfn/cfn-hup.conf') }}"
