@@ -16,7 +16,7 @@
 ---
 
 - block:
-  - apt: name=linux-image-extra-{{ ansible_kernel }} state=present
+  - apt: name=linux-image-{{ ansible_kernel }} state=present
     become: yes
   when: ansible_os_family == 'Debian'
 
