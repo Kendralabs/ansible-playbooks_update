@@ -132,7 +132,7 @@
       apt: name=gnupg2 state=present
     - name: "Update current GPG to GPGV2"
       shell: 
-        cmd: ln -fs /usr/bin/gpg2 /usr/bin/gpg
+        cmd: sudo ln -fs /usr/bin/gpg2 /usr/bin/gnupg1
     - name: Change permission of download script
       shell: 
         cmd: chmod 755 download_gpg.sh
