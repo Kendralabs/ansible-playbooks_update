@@ -22,7 +22,7 @@
   when: not rvm_installer.stat.exists
 
 - name: Import GPG keys from keyservers
-  shell: 'gpg --batch --keyserver {{ item }} --recv-keys {{ rvm1_gpg_keys }}'
+  shell: 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3'
   changed_when: False
   check_mode: False
   with_items: '{{ rvm1_gpg_key_servers }}'
