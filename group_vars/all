@@ -20,7 +20,7 @@ rvm1_rubies:
   - ruby-3.0.0
   
 
-rvm1_install_path: /usr/local/rvm/gems/ruby-3.0.0
+rvm1_install_path: /usr/local/rvm/
 
 # bosh-init
 #bosh_init_version: 0.0.81
