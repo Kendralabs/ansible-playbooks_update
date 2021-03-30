@@ -22,7 +22,7 @@
   when: not rvm_installer.stat.exists
 
 - name: Import GPG keys from keyservers
-  shell: 'gpg --keyserver http://keys.gnupg.net --recv-keys D39DC0E3'
+  shell: 'sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
   changed_when: False
   check_mode: False
   with_items: 'http://keys.gnupg.net'
