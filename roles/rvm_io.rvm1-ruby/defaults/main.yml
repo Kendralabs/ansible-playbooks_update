@@ -5,6 +5,7 @@
 rvm1_rubies:
   - 'ruby-3.0.0'
 
+rvm1_bundler_install: True
 # Delete a specific version of ruby (ie. ruby-2.1.0)
 rvm1_delete_ruby:
 
