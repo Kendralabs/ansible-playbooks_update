@@ -19,15 +19,43 @@
            dest=/usr/local/bin/bosh-init mode=a+x
   become: yes
 
-- include_vars: "{{ ansible_distribution }}.yml"
+#- include_vars: "{{ ansible_distribution }}.yml"
 
 - apt: name={{ item }} state=present
-  with_items: bosh_init_pkgs
+  with_items: 
+      - build-essential
+      - zlibc
+      - zlib1g-dev
+      - ruby
+      - ruby-dev
+      - openssl
+      - libxslt1-dev
+      - libxml2-dev
+      - libssl-dev
+      - libreadline8
+      - libreadline-dev
+      - libyaml-dev
+      - libsqlite3-dev
+      - sqlite3
   become: yes
   when: ansible_distribution == 'Ubuntu'
 
 - yum: name={{ item }} state=present
-  with_items: bosh_init_pkgs
+  with_items: 
+      - build-essential
+      - zlibc
+      - zlib1g-dev
+      - ruby
+      - ruby-dev
+      - openssl
+      - libxslt1-dev
+      - libxml2-dev
+      - libssl-dev
+      - libreadline8
+      - libreadline-dev
+      - libyaml-dev
+      - libsqlite3-dev
+      - sqlite3
   become: yes
   when: ansible_distribution == 'CentOS'
 
