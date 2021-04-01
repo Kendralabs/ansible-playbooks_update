@@ -16,7 +16,7 @@
 ---
 
 # BOSH AWS CPI Release
-bosh_cpi_release_version: 39
+bosh_cpi_release_version: 73
 bosh_cpi_release_sha1: ef97bfaff05989ab006e88d28763feb8fbb32d45
 bosh_cpi_release_url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v={{ bosh_cpi_release_version }}
 
