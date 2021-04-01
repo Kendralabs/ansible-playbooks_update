@@ -25,8 +25,8 @@ bosh_init_pkgs:
   - libxslt1-dev
   - libxml2-dev
   - libssl-dev
-  - libreadline6
-  - libreadline6-dev
+  - libreadline8
+  - libreadline-dev
   - libyaml-dev
   - libsqlite3-dev
   - sqlite3
