@@ -30,7 +30,7 @@
 - name: Install bundler if not installed
   shell: >
     ls {{ rvm1_install_path }}/wrappers/{{ item.stdout }}
-    | if ! grep "^bundler " ; then {{ rvm1_install_path }}/wrappers/{{ item.stdout }}/gem install bundler ;
+    | if ! grep "^bundler " ; then {{ rvm1_install_path }}/wrappers/{{ item.stdout }}/gem install bundler -v '1.17.3' ;
   args:
     creates: '{{ rvm1_install_path }}/wrappers/{{ item.stdout }}/bundler'
   with_items: '{{ ruby_patch.results }}'
