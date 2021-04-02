@@ -34,11 +34,10 @@
   register: shell_result
   changed_when: False
   failed_when: shell_result.rc != 0 and
-               not shell_result.stderr | search("Target not set")
-
+               not shell_result.stderr is search("Target not set")
 - name: Connect to the Director
   shell: bosh --no-color -n target {{ bosh_director_ip }}
-  changed_when: not shell_result.stdout | search(bosh_director_ip)
+  changed_when: not shell_result.stdout is search(bosh_director_ip)
   notify:
     - Login into the Director
 

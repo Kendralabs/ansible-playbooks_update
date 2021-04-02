@@ -15,15 +15,32 @@
 
 ---
 
-- include_vars: "{{ ansible_distribution }}.yml"
+#- include_vars: "{{ ansible_distribution }}.yml"
+- include_vars: "Ubuntu.yml"
 
 - apt: name={{ item }} state=present
-  with_items: bosh_cli_pkgs
+  with_items: 
+        - build-essential
+        - ruby
+        - ruby-dev
+        - libxml2-dev
+        - libsqlite3-dev
+        - libxslt1-dev
+        - libpq-dev
+        - libmysqlclient-dev
   become: yes
   when: ansible_distribution == 'Ubuntu'
 
 - yum: name={{ item }} state=present
-  with_items: bosh_cli_pkgs
+  with_items: 
+        - build-essential
+        - ruby
+        - ruby-dev
+        - libxml2-dev
+        - libsqlite3-dev
+        - libxslt1-dev
+        - libpq-dev
+        - libmysqlclient-dev
   become: yes
   when: ansible_distribution == 'CentOS'
 

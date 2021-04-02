@@ -15,6 +15,6 @@
 
 ---
 
-bosh_cli_version: null
+bosh_cli_version: 1.3262.26.0
 
 # vi:et:sw=2 ts=2 sts=2 ft=ansible

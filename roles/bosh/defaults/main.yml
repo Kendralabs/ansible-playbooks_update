@@ -19,9 +19,9 @@ bosh_deployment_directory: "{{ ansible_env['HOME'] }}/{{ bosh_director_name }}"
 
 # BOSH
 #bosh_release_version: 223
-bosh_release_version: 271.1.0
+bosh_release_version: 271.7.0
 bosh_release_url: https://bosh.io/d/github.com/cloudfoundry/bosh?v={{ bosh_release_version }}
-bosh_release_sha1: a3d789e55ff99c41a8a929ec1a9de58ad3dbfce4
+bosh_release_sha1: 6b40cf544ccf78dd558a1a692e71bb4d63694000
 
 bosh_stemcell_version: 3012
 
@@ -35,7 +35,7 @@ bosh_access_key_id: null
 bosh_secret_access_key: null
 
 bosh_dns:
-  - 10.0.0.2
+  - 18.157.52.46
 
 bosh_nats_password: nats-password
 bosh_redis_password: redis-password
