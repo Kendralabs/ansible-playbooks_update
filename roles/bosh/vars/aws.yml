@@ -22,7 +22,7 @@ bosh_cpi_release_url:  https://bosh.io/d/github.com/cloudfoundry/bosh-aws-cpi-re
 
 # BOSH Stemcell
 bosh_stemcell_sha1: 9c620c24bfc5d41c7cb0b7a009a5c6602a8a5b14
-bosh_stemcell_url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-bionic-go_agent?v=0.19
+bosh_stemcell_url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-bionic-go_agent?v={{ bosh_stemcell_version }}
 
 bosh_instance_type: m3.medium
 
