@@ -23,7 +23,7 @@ bosh_release_version: 271.7.0
 bosh_release_url: https://bosh.io/d/github.com/cloudfoundry/bosh?v={{ bosh_release_version }}
 bosh_release_sha1: 6b40cf544ccf78dd558a1a692e71bb4d63694000
 
-bosh_stemcell_version: 3012
+bosh_stemcell_version: 0.19
 
 bosh_ephemeral_disk_size: 25_000
 bosh_disk_size: 20_000
