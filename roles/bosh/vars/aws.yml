@@ -16,13 +16,13 @@
 ---
 
 # BOSH AWS CPI Release
-bosh_cpi_release_version: 73
-bosh_cpi_release_sha1: 350aa469deb281911b64d0be99faacfd26acdfaf
-bosh_cpi_release_url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v={{ bosh_cpi_release_version }}
+bosh_cpi_release_version: 85
+bosh_cpi_release_sha1: ab16bba3ae74b1a59f67d1579de22bc26ae95c53
+bosh_cpi_release_url:  https://bosh.io/d/github.com/cloudfoundry/bosh-aws-cpi-release?v={{ bosh_cpi_release_version }}
 
 # BOSH Stemcell
-bosh_stemcell_sha1: 624c3ea55cbdb7143ffecf36d7e8c0275926a824
-bosh_stemcell_url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v={{ bosh_stemcell_version }}
+bosh_stemcell_sha1: 9c620c24bfc5d41c7cb0b7a009a5c6602a8a5b14
+bosh_stemcell_url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-bionic-go_agent?v=0.19
 
 bosh_instance_type: m3.medium
 
