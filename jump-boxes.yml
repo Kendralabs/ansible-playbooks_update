@@ -210,18 +210,6 @@
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
     ftp_proxy: "{{ ftp_proxy }}"
-  post_tasks:
-    - name: Signal the Cloud Foundry wait condition handle for AWS
-      command: cfn-signal -s true -r 'Cloud Foundry deployed.' {{ cf_wait_condition_handle }}
-      when: cf_wait_condition_handle and provider == 'aws'
-    - name: Signal the Docker Broker wait condition handle for AWS
-      command: cfn-signal -s true -r 'Docker Broker deployed.' {{ docker_broker_wait_condition_handle }}
-      when: docker_broker_wait_condition_handle and provider == 'aws'
-    - name: Signal the Cloud Foundry wait condition handle for OpenStack
-      command: "{{ cf_wait_condition_handle }} --data-binary '{\"status\": \"SUCCESS\"}'"
-      when: cf_wait_condition_handle and provider == 'openstack'
-    - name: Signal the Docker Broker wait condition handle for OpenStack
-      command: "{{ docker_broker_wait_condition_handle }} --data-binary '{\"status\": \"SUCCESS\"}'"
-      when: docker_broker_wait_condition_handle and provider == 'openstack'
+
 
 # vi:et:sw=2 ts=2 sts=2 ft=ansible
