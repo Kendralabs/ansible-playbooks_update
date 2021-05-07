@@ -193,7 +193,7 @@
   # TODO: Create generic role for BOSH deployment.
   roles:
     - role: tap
-      cf_director_uuid: "d5717cf0-3c31-4ea9-b952-c56bf4eadcc8"
+      cf_director_uuid: "d5717cf0-3c31-4ea9-b952-c56bf4eadcc8"  #change this#
       cf_dns: "{{ bosh_dns }}"
       cf_bosh_security_group: "{{ bosh_default_security_groups | first }}"
       cf_bosh_stemcell_version: "{{ bosh_stemcell_version }}"
