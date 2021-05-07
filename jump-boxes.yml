@@ -167,13 +167,6 @@
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
     ftp_proxy: "{{ ftp_proxy }}"
-  post_tasks:
-    - name: Signal the BOSH Director wait condition handle for AWS
-      command: cfn-signal -s true -r 'BOSH Director deployed.' {{ bosh_director_wait_condition_handle }}
-      when: bosh_director_wait_condition_handle and provider == 'aws'
-    - name: Signal the BOSH Director wait condition handle for OpenStack
-      command: "{{ bosh_director_wait_condition_handle }} --data-binary '{\"status\": \"SUCCESS\"}'"
-      when: bosh_director_wait_condition_handle and provider == 'openstack'
 
 - name: Deploy Trusted Analytics Platform
   hosts: jump-boxes
@@ -200,7 +193,7 @@
   # TODO: Create generic role for BOSH deployment.
   roles:
     - role: tap
-      cf_director_uuid: "{{ bosh_director_uuid }}"
+      cf_director_uuid: "d5717cf0-3c31-4ea9-b952-c56bf4eadcc8"
       cf_dns: "{{ bosh_dns }}"
       cf_bosh_security_group: "{{ bosh_default_security_groups | first }}"
       cf_bosh_stemcell_version: "{{ bosh_stemcell_version }}"
@@ -210,6 +203,5 @@
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
     ftp_proxy: "{{ ftp_proxy }}"
-
 
 # vi:et:sw=2 ts=2 sts=2 ft=ansible
